@@ -3,6 +3,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
@@ -20,6 +21,8 @@ const { swaggerUi, specs } = require('./config/swagger');
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(cors());
 
 // ── Security middleware ───────────────────────────────────────────────────────
 app.use(helmet());

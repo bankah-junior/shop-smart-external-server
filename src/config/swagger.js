@@ -15,12 +15,6 @@ const options = {
         email: 'support@shopsmart.com',
       },
     },
-    servers: [
-      {
-        url: 'http://localhost:3000',
-        description: 'Development server',
-      },
-    ],
     security: [
       {
         ApiKeyAuth: [],
