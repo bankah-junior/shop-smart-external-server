@@ -67,6 +67,17 @@ const options = {
             submitted_at: { type: 'string', format: 'date-time' },
           },
         },
+        Product: {
+          type: 'object',
+          properties: {
+            sku: { type: 'string', example: 'PRD-A12' },
+            product_name: { type: 'string' },
+            category: { type: 'string' },
+            brand: { type: 'string' },
+            unit_of_measure: { type: 'string' },
+            is_active: { type: 'boolean' },
+          },
+        },
       },
     },
   },

@@ -12,6 +12,7 @@
     "seed:json:fresh": "node seedFromJson.js --clear",
     "seed:json:orders": "node seedFromJson.js --orders",
     "seed:json:feedback": "node seedFromJson.js --feedback",
+    "seed:json:products": "node seedFromJson.js --products",
     "test": "echo \"No tests configured\" && exit 0"
   },
   "dependencies": {

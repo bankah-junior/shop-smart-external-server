@@ -3,7 +3,7 @@
 /**
  * seedFromJson.js — Load seed data from JSON files into MongoDB
  *
- * Reads  ./data/orders.json  and  ./data/feedback.json  then inserts
+ * Reads  ./data/orders.json,  ./data/feedback.json and ./data/products.json  then inserts
  * them into the local MongoDB database defined in your .env file.
  *
  * Usage:
@@ -11,11 +11,13 @@
  *   node seedFromJson.js --clear       → drop both collections first, then insert
  *   node seedFromJson.js --orders      → import only orders
  *   node seedFromJson.js --feedback    → import only feedback
+ *   node seedFromJson.js --products    → import only products
  *   node seedFromJson.js --clear --orders   → clear + import orders only
  *
  * Place your JSON files at:
  *   ShopSmartExternalServer/data/orders.json
  *   ShopSmartExternalServer/data/feedback.json
+ *   ShopSmartExternalServer/data/products.json
  */
 
 require('dotenv').config();
@@ -26,19 +28,25 @@ const mongoose  = require('mongoose');
 
 const Order              = require('./src/models/Order');
 const FeedbackSubmission = require('./src/models/FeedbackSubmission');
+const Product            = require('./src/models/ProductCatalogue');
 
 // ─── CLI flags ────────────────────────────────────────────────────────────────
 const args          = process.argv.slice(2);
 const CLEAR         = args.includes('--clear');
 const ONLY_ORDERS   = args.includes('--orders');
 const ONLY_FEEDBACK = args.includes('--feedback');
-const RUN_ORDERS    = !ONLY_FEEDBACK;   // true unless --feedback is the sole flag
-const RUN_FEEDBACK  = !ONLY_ORDERS;
+const ONLY_PRODUCTS = args.includes('--products');
+
+const ANY_ONLY      = ONLY_ORDERS || ONLY_FEEDBACK || ONLY_PRODUCTS;
+const RUN_ORDERS    = ANY_ONLY ? ONLY_ORDERS : true;
+const RUN_FEEDBACK  = ANY_ONLY ? ONLY_FEEDBACK : true;
+const RUN_PRODUCTS  = ANY_ONLY ? ONLY_PRODUCTS : true;
 
 // ─── File paths ───────────────────────────────────────────────────────────────
 const DATA_DIR      = path.join(__dirname, 'seedData');
 const ORDERS_FILE   = path.join(DATA_DIR, 'orders.json');
 const FEEDBACK_FILE = path.join(DATA_DIR, 'feedback.json');
+const PRODUCTS_FILE = path.join(DATA_DIR, 'products.json');
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -219,6 +227,71 @@ const importFeedback = async () => {
   console.log(`     Avg rating            : ${avgRating[0] ? avgRating[0].avg.toFixed(2) : 'n/a'}`);
 };
 
+// ─── Import: Products ────────────────────────────────────────────────────────
+
+const importProducts = async () => {
+  header('Importing products.json → productcatalogue collection');
+
+  const records = readJsonFile(PRODUCTS_FILE);
+  console.log(`  📂  Records loaded from file : ${records.length}`);
+
+  if (CLEAR) {
+    await Product.deleteMany({});
+    console.log('  🗑️   Collection cleared        : productcatalogue');
+  }
+
+  let inserted  = 0;
+  let skipped   = 0;
+  let failed    = 0;
+  const errors  = [];
+
+  for (const record of records) {
+    if (!record.sku) {
+      errors.push({ record: JSON.stringify(record).slice(0, 80), reason: 'Missing sku' });
+      failed++;
+      continue;
+    }
+
+    try {
+      // Skip if already exists (idempotent re-runs)
+      const exists = await Product.exists({ sku: record.sku.toUpperCase().trim() });
+      if (exists) {
+        skipped++;
+        continue;
+      }
+
+      // Coerce dates if present
+      if (record.ingested_at) record.ingested_at = new Date(record.ingested_at);
+
+      await Product.create(record);
+      inserted++;
+    } catch (err) {
+      errors.push({ sku: record.sku, reason: err.message });
+      failed++;
+    }
+  }
+
+  // ── Result summary ─────────────────────────────────────────────────────────
+  console.log(`\n  ✅  Inserted  : ${inserted}`);
+  console.log(`  ⏭️   Skipped   : ${skipped}  (already in DB)`);
+  console.log(`  ❌  Failed    : ${failed}`);
+
+  if (errors.length) {
+    console.log('\n  Failed records:');
+    errors.forEach((e) => console.log(`    • ${e.sku || e.record} → ${e.reason}`));
+  }
+
+  // DB totals
+  const dbTotal = await Product.countDocuments();
+  const active  = await Product.countDocuments({ is_active: true });
+  const inactive = await Product.countDocuments({ is_active: false });
+
+  console.log('\n  ── DB snapshot ───────────────────────────────');
+  console.log(`     Total products in DB  : ${dbTotal}`);
+  console.log(`     Active products       : ${active}`);
+  console.log(`     Inactive products     : ${inactive}`);
+};
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 const run = async () => {
@@ -228,7 +301,16 @@ const run = async () => {
   console.log('║       ShopSmartExternalServer — JSON Seeder      ║');
   console.log('╚══════════════════════════════════════════════════╝');
   console.log(`\n  Mode   : ${CLEAR ? '⚠️  CLEAR + INSERT' : 'INSERT (skip duplicates)'}`);
-  console.log(`  Target : ${ONLY_ORDERS ? 'orders only' : ONLY_FEEDBACK ? 'feedback only' : 'orders + feedback'}`);
+
+  let targetLabel = 'orders + feedback + products';
+  if (ANY_ONLY) {
+    const targets = [];
+    if (ONLY_ORDERS) targets.push('orders');
+    if (ONLY_FEEDBACK) targets.push('feedback');
+    if (ONLY_PRODUCTS) targets.push('products');
+    targetLabel = targets.join(' + ') + ' only';
+  }
+  console.log(`  Target : ${targetLabel}`);
   console.log(`  DB     : ${process.env.MONGO_URI}`);
 
   // Connect
@@ -238,6 +320,7 @@ const run = async () => {
   try {
     if (RUN_ORDERS)   await importOrders();
     if (RUN_FEEDBACK) await importFeedback();
+    if (RUN_PRODUCTS) await importProducts();
   } finally {
     await mongoose.disconnect();
     const elapsed = ((Date.now() - startTime) / 1000).toFixed(1);

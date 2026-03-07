@@ -1,0 +1,137 @@
+[
+  {
+    "sku": "PRD-A12",
+    "product_name": "Wireless Bluetooth Earbuds",
+    "category": "Electronics",
+    "brand": "SoundWave",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 1
+  },
+  {
+    "sku": "PRD-B04",
+    "product_name": "Men's Cotton Polo Shirt",
+    "category": "Clothing & Apparel",
+    "brand": "UrbanThread",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 2
+  },
+  {
+    "sku": "PRD-C18",
+    "product_name": "Organic Shea Butter Lotion 500ml",
+    "category": "Health & Beauty",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 3
+  },
+  {
+    "sku": "PRD-D07",
+    "product_name": "Non-Stick Frying Pan 28cm",
+    "category": "Home & Kitchen",
+    "brand": "ChefMate",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 4
+  },
+  {
+    "sku": "PRD-E33",
+    "product_name": "Running Sneakers — Unisex",
+    "category": "Sports & Outdoors",
+    "brand": "StridePro",
+    "unit_of_measure": "pair",
+    "is_active": true,
+    "product_id": 5
+  },
+  {
+    "sku": "PRD-F21",
+    "product_name": "Rooibos Herbal Tea 100 Bags",
+    "category": "Food & Beverages",
+    "brand": "HarvestLeaf",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "product_id": 6
+  },
+  {
+    "sku": "PRD-G09",
+    "product_name": "Android Smartphone 6.7in 128GB",
+    "category": "Electronics",
+    "brand": "NovaTech",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 7
+  },
+  {
+    "sku": "PRD-H15",
+    "product_name": "Stainless Steel Water Bottle 1L",
+    "category": "Sports & Outdoors",
+    "brand": "HydroGo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 8
+  },
+  {
+    "sku": "PRD-I02",
+    "product_name": "A4 Ruled Notebook 200 Pages",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 9
+  },
+  {
+    "sku": "PRD-J44",
+    "product_name": "Children's Building Blocks Set 50pc",
+    "category": "Toys & Games",
+    "brand": "PlayBuild",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "product_id": 10
+  },
+  {
+    "sku": "PRD-K55",
+    "product_name": "Ladies Ankara Wrap Dress",
+    "category": "Clothing & Apparel",
+    "brand": "AfriStyle",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 11
+  },
+  {
+    "sku": "PRD-L66",
+    "product_name": "Multivitamin Capsules 60 Count",
+    "category": "Health & Beauty",
+    "brand": "VitaShield",
+    "unit_of_measure": "box",
+    "is_active": true,
+    "product_id": 12
+  },
+  {
+    "sku": "PRD-M77",
+    "product_name": "Portable Solar Lantern",
+    "category": "Electronics",
+    "brand": "SunBright",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "product_id": 13
+  },
+  {
+    "sku": "PRD-N88",
+    "product_name": "Cocoa Powder Unsweetened 250g",
+    "category": "Food & Beverages",
+    "brand": "GoldPod",
+    "unit_of_measure": "g",
+    "is_active": true,
+    "product_id": 14
+  },
+  {
+    "sku": "PRD-O99",
+    "product_name": "Yoga Mat Anti-Slip 6mm",
+    "category": "Sports & Outdoors",
+    "brand": "ZenFlex",
+    "unit_of_measure": "each",
+    "is_active": false,
+    "product_id": 15
+  }
+]

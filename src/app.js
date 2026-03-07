@@ -16,6 +16,7 @@ const { errorHandler, notFound } = require('./middleware/errorHandler');
 const healthRouter = require('./routes/health');
 const ordersRouter = require('./routes/orders');
 const feedbackRouter = require('./routes/feedback');
+const productsRouter = require('./routes/products');
 const { swaggerUi, specs } = require('./config/swagger');
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
@@ -62,7 +63,7 @@ app.use('/health', healthRouter);
 // app.use('/api', apiKeyAuth);  // must come after /health but before any /api/* routes: it 
 app.use('/api/orders', ordersRouter);
 app.use('/api/feedback', feedbackRouter);
-
+app.use('/api/products', productsRouter);
 // ── 404 & error handlers ──────────────────────────────────────────────────────
 app.use(notFound);
 app.use(errorHandler);
