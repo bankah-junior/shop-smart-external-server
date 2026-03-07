@@ -21,14 +21,14 @@ const options = {
       },
     ],
     components: {
-      securitySchemes: {
-        ApiKeyAuth: {
-          type: 'apiKey',
-          in: 'header',
-          name: 'X-API-Key',
-          description: 'Enter your API key to access protected routes',
-        },
-      },
+      // securitySchemes: {
+      //   ApiKeyAuth: {
+      //     type: 'apiKey',
+      //     in: 'header',
+      //     name: 'X-API-Key',
+      //     description: 'Enter your API key to access protected routes',
+      //   },
+      // },
       schemas: {
         Order: {
           type: 'object',

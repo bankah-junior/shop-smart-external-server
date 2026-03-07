@@ -59,7 +59,7 @@ app.use(
 app.use('/health', healthRouter);
 
 // All /api/* routes require API key
-app.use('/api', apiKeyAuth);
+// app.use('/api', apiKeyAuth);  // must come after /health but before any /api/* routes: it 
 app.use('/api/orders', ordersRouter);
 app.use('/api/feedback', feedbackRouter);
 
