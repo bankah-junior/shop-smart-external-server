@@ -12,10 +12,11 @@
 
 const mongoose = require('mongoose');
 
-const ORDER_STATUSES = ['PENDING', 'FULFILLED', 'CANCELLED', 'RETURNED'];
+const ORDER_STATUSES  = ['PENDING', 'FULFILLED', 'CANCELLED', 'RETURNED'];
 const PAYMENT_METHODS = ['MOMO', 'CARD', 'COD'];
 const DELIVERY_REGIONS = ['Greater Accra', 'Ashanti', 'Western', 'Central'];
 const DELIVERY_CITIES  = ['Accra', 'Kumasi', 'Takoradi', 'Cape Coast'];
+const WAREHOUSE_IDS    = ['WH-ACC-01', 'WH-KUM-01', 'WH-TAK-01', 'WH-CAP-01'];
 
 // ── Embedded line-item sub-schema ────────────────────────────────────────────
 const orderItemSchema = new mongoose.Schema(
@@ -80,6 +81,17 @@ const orderSchema = new mongoose.Schema(
       required: true,
       enum: { values: ORDER_STATUSES, message: 'Invalid order_status: {VALUE}' },
       uppercase: true,
+    },
+    // FK → warehouses.warehouse_id — the warehouse that fulfils this online order
+    fulfillment_warehouse_id: {
+      type: String,
+      required: [true, 'fulfillment_warehouse_id is required'],
+      trim: true,
+      uppercase: true,
+      enum: {
+        values: WAREHOUSE_IDS,
+        message: 'Invalid fulfillment_warehouse_id: {VALUE}',
+      },
     },
     delivery_region: {
       type: String,

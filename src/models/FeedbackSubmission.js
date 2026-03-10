@@ -3,10 +3,12 @@
 /**
  * FeedbackSubmission model — one entry per customer feedback webhook POST.
  *
- * Feedback can be submitted for both online orders. The reference_id
- * links back to an orders.order_id. Orphan feedback (reference_id not in
- * orders) must be dropped before warehouse load.
+ * feedback_id   → PK
+ * order_id      → FK → orders.order_id  (replaces reference_id)
+ * customer_id   → denormalised from the parent order (nullable)
+ * sku           → nullable FK → product_catalogue.sku
  *
+ * Orphan feedback (order_id not in orders) is flagged for ETL exclusion.
  * PII: comment field is scanned and redacted on ingest.
  */
 
@@ -15,9 +17,9 @@ const mongoose = require('mongoose');
 const FEEDBACK_CATEGORIES = [
   'Delivery Speed',
   'Product Quality',
-  'Staff Service',
   'App Experience',
   'Packaging',
+  'Overall',
 ];
 
 const DELIVERY_REGIONS = ['Greater Accra', 'Ashanti', 'Western', 'Central'];
@@ -33,16 +35,23 @@ const feedbackSchema = new mongoose.Schema(
       index: true,
     },
 
-    // Points to orders.order_id (online)
-    reference_id: {
+    // FK → orders.order_id
+    order_id: {
       type: String,
-      required: [true, 'reference_id is required'],
+      required: [true, 'order_id is required'],
       trim: true,
       uppercase: true,
       index: true,
     },
 
-    // Populated for ONLINE feedback; null for in-store
+    // Denormalised from parent order — useful for warehouse joins
+    customer_id: {
+      type: String,
+      default: null,
+      trim: true,
+    },
+
+    // Populated for ONLINE feedback
     delivery_region: {
       type: String,
       default: null,
@@ -52,7 +61,7 @@ const feedbackSchema = new mongoose.Schema(
       },
     },
 
-    // Null when feedback is about experience (e.g., delivery speed) not a product
+    // Null when feedback is about experience rather than a specific product
     sku: {
       type: String,
       default: null,
@@ -74,7 +83,7 @@ const feedbackSchema = new mongoose.Schema(
       required: [true, 'category is required'],
       enum: {
         values: FEEDBACK_CATEGORIES,
-        message: 'Invalid category: {VALUE}',
+        message: 'Invalid category: {VALUE}. Must be one of: ' + FEEDBACK_CATEGORIES.join(', '),
       },
     },
 
@@ -88,10 +97,9 @@ const feedbackSchema = new mongoose.Schema(
     comment_had_pii: {
       type: Boolean,
       default: false,
-      // True if PII was detected and redacted from comment
     },
 
-    // UTC from API; ETL converts to GMT+0 (Ghana time) before warehouse load
+    // UTC from API; ETL converts to GMT+0 before warehouse load
     submitted_at: {
       type: Date,
       required: [true, 'submitted_at is required'],
@@ -108,7 +116,6 @@ const feedbackSchema = new mongoose.Schema(
     is_orphan: {
       type: Boolean,
       default: false,
-      // True if reference_id could not be resolved to a known order
     },
     orphan_checked_at: {
       type: Date,
@@ -122,9 +129,11 @@ const feedbackSchema = new mongoose.Schema(
 );
 
 // Indexes for ETL query patterns
-feedbackSchema.index({ reference_id: 1 });
+feedbackSchema.index({ order_id: 1 });
 feedbackSchema.index({ ingested_at: 1 });
 feedbackSchema.index({ is_orphan: 1 });
 feedbackSchema.index({ submitted_at: 1 });
+feedbackSchema.index({ customer_id: 1 });
 
 module.exports = mongoose.model('FeedbackSubmission', feedbackSchema);
+module.exports.FEEDBACK_CATEGORIES = FEEDBACK_CATEGORIES;

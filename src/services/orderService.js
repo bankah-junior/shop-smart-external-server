@@ -31,6 +31,7 @@ const ingestOrder = async (payload) => {
     order_id,
     customer_id,
     order_status,
+    fulfillment_warehouse_id,
     delivery_region,
     delivery_city,
     delivery_address = null,
@@ -47,7 +48,19 @@ const ingestOrder = async (payload) => {
     return { saved: false, order_id, reason: 'duplicate' };
   }
 
-  // ── 2 & 3. Unpack items, generate IDs, derive line totals ──────────────────
+  // ── 2. SKU catalogue validation ────────────────────────────────────────────
+  const incomingSkus = items.map((i) => i.sku);
+  const skuCheck = await validateSkus(incomingSkus);
+  if (!skuCheck.valid) {
+    const details = [
+      ...skuCheck.unknown.map((s) => `${s}: not in catalogue`),
+      ...skuCheck.inactive.map((s) => `${s}: inactive product`),
+    ].join('; ');
+    logger.warn('Order rejected: SKU catalogue validation failed', { order_id, details });
+    return { saved: false, order_id, reason: `invalid_skus: ${details}` };
+  }
+
+  // ── 3 & 4. Unpack items, generate IDs, derive line totals ──────────────────
   const order_items = items.map((item, idx) => {
     const seqSuffix = String(idx + 1).padStart(3, '0');
     const order_item_id = `${order_id.toUpperCase()}-${seqSuffix}`;
@@ -62,7 +75,7 @@ const ingestOrder = async (payload) => {
     };
   });
 
-  // ── 4. Validate: SUM(line totals) === total_order_value_ghs ────────────────
+  // ── 5. Validate: SUM(line totals) === total_order_value_ghs ────────────────
   const sumLineTotals = parseFloat(
     order_items.reduce((acc, i) => acc + i.line_total_ghs, 0).toFixed(2)
   );
@@ -76,19 +89,20 @@ const ingestOrder = async (payload) => {
     });
   }
 
-  // ── 5. Timezone conversion (UTC → Ghana GMT+0) ─────────────────────────────
+  // ── 6. Timezone conversion (UTC → Ghana GMT+0) ─────────────────────────────
   const order_timestamp_ghana = utcToGhanaTime(order_timestamp_utc);
 
-  // ── 6. PII masking ─────────────────────────────────────────────────────────
+  // ── 7. PII masking ─────────────────────────────────────────────────────────
   const customer_id_masked = maskCustomerId(customer_id);
   const delivery_address_masked = maskAddress(delivery_address);
 
-  // ── 7. Persist ─────────────────────────────────────────────────────────────
+  // ── 8. Persist ─────────────────────────────────────────────────────────────
   const order = new Order({
     order_id: order_id.toUpperCase(),
     customer_id,            // raw PII — staging only
     customer_id_masked,
     order_status: order_status.toUpperCase(),
+    fulfillment_warehouse_id: fulfillment_warehouse_id.toUpperCase(),
     delivery_region,
     delivery_city,
     delivery_address,       // raw PII — staging only

@@ -26,11 +26,12 @@ const createProduct = async (payload) => {
 
   const product = new ProductCatalogue({
     sku,
-    product_name:    payload.product_name.trim(),
-    category:        payload.category.trim(),
-    brand:           payload.brand       ? payload.brand.trim()            : null,
-    unit_of_measure: payload.unit_of_measure ? payload.unit_of_measure.trim() : null,
-    is_active:       payload.is_active !== undefined ? payload.is_active : true,
+    product_name:             payload.product_name.trim(),
+    category:                 payload.category.trim(),
+    brand:                    payload.brand            ? payload.brand.trim()            : null,
+    unit_of_measure:          payload.unit_of_measure  ? payload.unit_of_measure.trim()  : null,
+    is_active:                payload.is_active !== undefined ? payload.is_active : true,
+    fulfillment_warehouse_id: payload.fulfillment_warehouse_id.trim().toUpperCase(),
   });
 
   await product.save();
@@ -48,8 +49,6 @@ const getProducts = async ({
   brand,
   is_active,
   search,
-  from,
-  to,
   page  = 1,
   limit = 50,
 } = {}) => {
@@ -63,12 +62,6 @@ const getProducts = async ({
   if (search) {
     const re = new RegExp(search.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i');
     filter.$or = [{ product_name: re }, { sku: re }, { brand: re }];
-  }
-
-  if (from || to) {
-    filter.ingested_at = {};
-    if (from) filter.ingested_at.$gte = new Date(from);
-    if (to) filter.ingested_at.$lte = new Date(to);
   }
 
   const skip = (page - 1) * limit;
@@ -149,7 +142,7 @@ const validateSkus = async (skus) => {
  * Update a product by sku. Only supplied fields are updated.
  */
 const updateProduct = async (sku, updates) => {
-  const allowed = ['product_name', 'category', 'brand', 'unit_of_measure', 'is_active'];
+  const allowed = ['product_name', 'category', 'brand', 'unit_of_measure', 'is_active', 'fulfillment_warehouse_id'];
   const patch = {};
   for (const key of allowed) {
     if (updates[key] !== undefined) {

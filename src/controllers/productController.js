@@ -65,15 +65,13 @@ const createProductBatch = async (req, res, next) => {
  */
 const listProducts = async (req, res, next) => {
   try {
-    const { category, brand, is_active, search, from, to, page, limit } = req.query;
+    const { category, brand, is_active, search, page, limit } = req.query;
 
     const result = await productService.getProducts({
       category,
       brand,
       is_active: is_active !== undefined ? is_active === 'true' : undefined,
       search,
-      from,
-      to,
       page:  parseInt(page, 10)  || 1,
       limit: Math.min(parseInt(limit, 10) || 50, 200),
     });

@@ -30,7 +30,8 @@ const MAX_COMMENT_LENGTH = 1000;
 const ingestFeedback = async (payload) => {
   const {
     feedback_id,
-    reference_id,
+    order_id,
+    customer_id = null,
     delivery_region = null,
     sku = null,
     rating,
@@ -80,15 +81,39 @@ const ingestFeedback = async (payload) => {
 
   // ── 4. Orphan detection ───────────────────────────────────────────────────
   const parentOrder = await Order.findOne({
-    order_id: reference_id.toUpperCase(),
+    order_id: order_id.toUpperCase(),
   }).lean();
   const isOrphan = !parentOrder;
   if (isOrphan) {
     logger.warn('Orphan feedback detected — will flag for ETL exclusion', {
       feedback_id,
-      reference_id,
+      order_id,
     });
-    warnings.push(`reference_id ${reference_id} not found in orders — flagged as orphan`);
+    warnings.push(`order_id ${order_id} not found in orders — flagged as orphan`);
+  }
+
+  // ── 4b. SKU catalogue check (when sku is provided) ────────────────────────
+  let resolvedSku = sku ? sku.toUpperCase() : null;
+  if (resolvedSku) {
+    const product = await ProductCatalogue.findOne(
+      { sku: resolvedSku },
+      { sku: 1, is_active: 1, product_name: 1, _id: 0 }
+    ).lean();
+    if (!product) {
+      logger.warn('Feedback SKU not found in product catalogue — clearing sku field', {
+        feedback_id,
+        sku: resolvedSku,
+      });
+      warnings.push(`sku ${resolvedSku} not found in product catalogue — stored as null`);
+      resolvedSku = null;
+    } else if (!product.is_active) {
+      logger.warn('Feedback references inactive product — noting in warnings', {
+        feedback_id,
+        sku: resolvedSku,
+        product_name: product.product_name,
+      });
+      warnings.push(`sku ${resolvedSku} references an inactive product`);
+    }
   }
 
   // ── 5. Timezone annotation ────────────────────────────────────────────────
@@ -98,9 +123,10 @@ const ingestFeedback = async (payload) => {
   // ── 6. Persist ────────────────────────────────────────────────────────────
   const feedback = new FeedbackSubmission({
     feedback_id: feedback_id.toUpperCase(),
-    reference_id: reference_id.toUpperCase(),
+    order_id: order_id.toUpperCase(),
+    customer_id: customer_id || null,
     delivery_region: delivery_region || null,
-    sku: sku ? sku.toUpperCase() : null,
+    sku: resolvedSku,
     rating: ratingInt,
     category,
     comment: cleanComment,
@@ -112,7 +138,7 @@ const ingestFeedback = async (payload) => {
   });
 
   await feedback.save();
-  logger.info('Feedback ingested', { feedback_id, reference_id, is_orphan: isOrphan });
+  logger.info('Feedback ingested', { feedback_id, order_id, is_orphan: isOrphan });
 
   return { saved: true, feedback_id, warnings: warnings.length ? warnings : undefined };
 };
@@ -121,7 +147,7 @@ const ingestFeedback = async (payload) => {
  * Retrieve feedback submissions with optional filters.
  */
 const getFeedback = async ({
-  reference_id,
+  order_id,
   category,
   min_rating,
   max_rating,
@@ -133,7 +159,7 @@ const getFeedback = async ({
   limit = 50,
 } = {}) => {
   const filter = {};
-  if (reference_id) filter.reference_id = reference_id.toUpperCase();
+  if (order_id) filter.order_id = order_id.toUpperCase();
   if (category) filter.category = category;
   if (region) filter.delivery_region = region;
   if (typeof is_orphan === 'boolean') filter.is_orphan = is_orphan;

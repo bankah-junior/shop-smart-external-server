@@ -44,7 +44,7 @@ const receiveFeedback = async (req, res, next) => {
 const listFeedback = async (req, res, next) => {
   try {
     const {
-      reference_id,
+      order_id,
       category,
       min_rating,
       max_rating,
@@ -57,7 +57,7 @@ const listFeedback = async (req, res, next) => {
     } = req.query;
 
     const result = await feedbackService.getFeedback({
-      reference_id,
+      order_id,
       category,
       min_rating,
       max_rating,

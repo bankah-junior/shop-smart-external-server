@@ -1,137 +1,1002 @@
 [
   {
-    "sku": "PRD-A12",
+    "product_id": 1,
+    "sku": "SKU-001",
     "product_name": "Wireless Bluetooth Earbuds",
     "category": "Electronics",
     "brand": "SoundWave",
     "unit_of_measure": "each",
     "is_active": true,
-    "product_id": 1
+    "fulfillment_warehouse_id": "WH-ACC-01"
   },
   {
-    "sku": "PRD-B04",
-    "product_name": "Men's Cotton Polo Shirt",
-    "category": "Clothing & Apparel",
-    "brand": "UrbanThread",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 2
-  },
-  {
-    "sku": "PRD-C18",
-    "product_name": "Organic Shea Butter Lotion 500ml",
-    "category": "Health & Beauty",
-    "brand": "PureGlow",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 3
-  },
-  {
-    "sku": "PRD-D07",
-    "product_name": "Non-Stick Frying Pan 28cm",
-    "category": "Home & Kitchen",
-    "brand": "ChefMate",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 4
-  },
-  {
-    "sku": "PRD-E33",
-    "product_name": "Running Sneakers — Unisex",
-    "category": "Sports & Outdoors",
-    "brand": "StridePro",
-    "unit_of_measure": "pair",
-    "is_active": true,
-    "product_id": 5
-  },
-  {
-    "sku": "PRD-F21",
-    "product_name": "Rooibos Herbal Tea 100 Bags",
-    "category": "Food & Beverages",
-    "brand": "HarvestLeaf",
-    "unit_of_measure": "pack",
-    "is_active": true,
-    "product_id": 6
-  },
-  {
-    "sku": "PRD-G09",
+    "product_id": 2,
+    "sku": "SKU-002",
     "product_name": "Android Smartphone 6.7in 128GB",
     "category": "Electronics",
     "brand": "NovaTech",
     "unit_of_measure": "each",
     "is_active": true,
-    "product_id": 7
+    "fulfillment_warehouse_id": "WH-ACC-01"
   },
   {
-    "sku": "PRD-H15",
-    "product_name": "Stainless Steel Water Bottle 1L",
-    "category": "Sports & Outdoors",
-    "brand": "HydroGo",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 8
-  },
-  {
-    "sku": "PRD-I02",
-    "product_name": "A4 Ruled Notebook 200 Pages",
-    "category": "Books & Stationery",
-    "brand": "ScribeWorks",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 9
-  },
-  {
-    "sku": "PRD-J44",
-    "product_name": "Children's Building Blocks Set 50pc",
-    "category": "Toys & Games",
-    "brand": "PlayBuild",
-    "unit_of_measure": "set",
-    "is_active": true,
-    "product_id": 10
-  },
-  {
-    "sku": "PRD-K55",
-    "product_name": "Ladies Ankara Wrap Dress",
-    "category": "Clothing & Apparel",
-    "brand": "AfriStyle",
-    "unit_of_measure": "each",
-    "is_active": true,
-    "product_id": 11
-  },
-  {
-    "sku": "PRD-L66",
-    "product_name": "Multivitamin Capsules 60 Count",
-    "category": "Health & Beauty",
-    "brand": "VitaShield",
-    "unit_of_measure": "box",
-    "is_active": true,
-    "product_id": 12
-  },
-  {
-    "sku": "PRD-M77",
+    "product_id": 3,
+    "sku": "SKU-003",
     "product_name": "Portable Solar Lantern",
     "category": "Electronics",
     "brand": "SunBright",
     "unit_of_measure": "each",
     "is_active": true,
-    "product_id": 13
+    "fulfillment_warehouse_id": "WH-TAK-01"
   },
   {
-    "sku": "PRD-N88",
+    "product_id": 4,
+    "sku": "SKU-004",
+    "product_name": "USB-C Fast Charger 65W",
+    "category": "Electronics",
+    "brand": "VoltEdge",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 5,
+    "sku": "SKU-005",
+    "product_name": "Bluetooth Portable Speaker",
+    "category": "Electronics",
+    "brand": "SoundWave",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 6,
+    "sku": "SKU-006",
+    "product_name": "Smart LED Desk Lamp",
+    "category": "Electronics",
+    "brand": "LumiTech",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 7,
+    "sku": "SKU-007",
+    "product_name": "Power Bank 20000mAh",
+    "category": "Electronics",
+    "brand": "VoltEdge",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 8,
+    "sku": "SKU-008",
+    "product_name": "Wireless Computer Mouse",
+    "category": "Electronics",
+    "brand": "ClickPro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 9,
+    "sku": "SKU-009",
+    "product_name": "HDMI Cable 2m",
+    "category": "Electronics",
+    "brand": "ConnectX",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 10,
+    "sku": "SKU-010",
+    "product_name": "Mini Bluetooth Keyboard",
+    "category": "Electronics",
+    "brand": "ClickPro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 11,
+    "sku": "SKU-011",
+    "product_name": "Electric Kettle 1.5L",
+    "category": "Electronics",
+    "brand": "BrewFast",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 12,
+    "sku": "SKU-012",
+    "product_name": "Digital Kitchen Scale",
+    "category": "Electronics",
+    "brand": "MeasurePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 13,
+    "sku": "SKU-013",
+    "product_name": "Solar Phone Charging Panel",
+    "category": "Electronics",
+    "brand": "SunBright",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 14,
+    "sku": "SKU-014",
+    "product_name": "Noise-Cancelling Headphones",
+    "category": "Electronics",
+    "brand": "SoundWave",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 15,
+    "sku": "SKU-015",
+    "product_name": "Smart Plug 4-Port USB",
+    "category": "Electronics",
+    "brand": "VoltEdge",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 16,
+    "sku": "SKU-016",
+    "product_name": "Men's Cotton Polo Shirt",
+    "category": "Clothing & Apparel",
+    "brand": "UrbanThread",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 17,
+    "sku": "SKU-017",
+    "product_name": "Ladies Ankara Wrap Dress",
+    "category": "Clothing & Apparel",
+    "brand": "AfriStyle",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 18,
+    "sku": "SKU-018",
+    "product_name": "Women's High-Waist Leggings",
+    "category": "Clothing & Apparel",
+    "brand": "FlexWear",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 19,
+    "sku": "SKU-019",
+    "product_name": "Men's Cargo Shorts",
+    "category": "Clothing & Apparel",
+    "brand": "UrbanThread",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 20,
+    "sku": "SKU-020",
+    "product_name": "Kente Print Shirt Unisex",
+    "category": "Clothing & Apparel",
+    "brand": "AfriStyle",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 21,
+    "sku": "SKU-021",
+    "product_name": "School Uniform White Shirt",
+    "category": "Clothing & Apparel",
+    "brand": "UniformCo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 22,
+    "sku": "SKU-022",
+    "product_name": "Traditional Kaba & Slit Set",
+    "category": "Clothing & Apparel",
+    "brand": "AfriStyle",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 23,
+    "sku": "SKU-023",
+    "product_name": "Boys' School Trousers",
+    "category": "Clothing & Apparel",
+    "brand": "UniformCo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 24,
+    "sku": "SKU-024",
+    "product_name": "Wax Print Fabric 6 Yards",
+    "category": "Clothing & Apparel",
+    "brand": "AfriStyle",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 25,
+    "sku": "SKU-025",
+    "product_name": "Athletic Training Socks 3-Pack",
+    "category": "Clothing & Apparel",
+    "brand": "FlexWear",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 26,
+    "sku": "SKU-026",
+    "product_name": "Denim Jacket Slim Fit",
+    "category": "Clothing & Apparel",
+    "brand": "UrbanThread",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 27,
+    "sku": "SKU-027",
+    "product_name": "Rain Poncho Unisex",
+    "category": "Clothing & Apparel",
+    "brand": "FlexWear",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 28,
+    "sku": "SKU-028",
+    "product_name": "Rooibos Herbal Tea 100 Bags",
+    "category": "Food & Beverages",
+    "brand": "HarvestLeaf",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 29,
+    "sku": "SKU-029",
     "product_name": "Cocoa Powder Unsweetened 250g",
     "category": "Food & Beverages",
     "brand": "GoldPod",
-    "unit_of_measure": "g",
+    "unit_of_measure": "each",
     "is_active": true,
-    "product_id": 14
+    "fulfillment_warehouse_id": "WH-KUM-01"
   },
   {
-    "sku": "PRD-O99",
+    "product_id": 30,
+    "sku": "SKU-030",
+    "product_name": "Groundnut Paste 500g",
+    "category": "Food & Beverages",
+    "brand": "GoldPod",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 31,
+    "sku": "SKU-031",
+    "product_name": "Palm Oil 1 Litre",
+    "category": "Food & Beverages",
+    "brand": "HarvestLeaf",
+    "unit_of_measure": "litre",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 32,
+    "sku": "SKU-032",
+    "product_name": "Instant Oats 1kg",
+    "category": "Food & Beverages",
+    "brand": "GrainFirst",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 33,
+    "sku": "SKU-033",
+    "product_name": "Evaporated Milk 410g",
+    "category": "Food & Beverages",
+    "brand": "FarmFresh",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 34,
+    "sku": "SKU-034",
+    "product_name": "Bottled Water 500ml 12-Pack",
+    "category": "Food & Beverages",
+    "brand": "ClearFlow",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 35,
+    "sku": "SKU-035",
+    "product_name": "Malt Drink 330ml Can",
+    "category": "Food & Beverages",
+    "brand": "MaltBrewery",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 36,
+    "sku": "SKU-036",
+    "product_name": "Honey Raw Unfiltered 375g",
+    "category": "Food & Beverages",
+    "brand": "GoldPod",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-CAP-01"
+  },
+  {
+    "product_id": 37,
+    "sku": "SKU-037",
+    "product_name": "Tomato Paste 70g",
+    "category": "Food & Beverages",
+    "brand": "HarvestLeaf",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 38,
+    "sku": "SKU-038",
+    "product_name": "Shito Pepper Sauce 200g",
+    "category": "Food & Beverages",
+    "brand": "GoldPod",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 39,
+    "sku": "SKU-039",
+    "product_name": "Hibiscus Dried Petals 100g",
+    "category": "Food & Beverages",
+    "brand": "HarvestLeaf",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-CAP-01"
+  },
+  {
+    "product_id": 40,
+    "sku": "SKU-040",
+    "product_name": "Organic Shea Butter Lotion 500ml",
+    "category": "Health & Beauty",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 41,
+    "sku": "SKU-041",
+    "product_name": "Multivitamin Capsules 60 Count",
+    "category": "Health & Beauty",
+    "brand": "VitaShield",
+    "unit_of_measure": "box",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 42,
+    "sku": "SKU-042",
+    "product_name": "Black Soap Bar 100g",
+    "category": "Health & Beauty",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 43,
+    "sku": "SKU-043",
+    "product_name": "Argan Hair Oil 100ml",
+    "category": "Health & Beauty",
+    "brand": "ManeGold",
+    "unit_of_measure": "bottle",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 44,
+    "sku": "SKU-044",
+    "product_name": "Sunscreen SPF 50 Cream 50ml",
+    "category": "Health & Beauty",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 45,
+    "sku": "SKU-045",
+    "product_name": "Malaria Mosquito Repellent Spray",
+    "category": "Health & Beauty",
+    "brand": "SafeGuard",
+    "unit_of_measure": "bottle",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 46,
+    "sku": "SKU-046",
+    "product_name": "Whitening Toothpaste 150ml",
+    "category": "Health & Beauty",
+    "brand": "DentaBright",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 47,
+    "sku": "SKU-047",
+    "product_name": "Feminine Hygiene Pads 16-Pack",
+    "category": "Health & Beauty",
+    "brand": "SafeGuard",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 48,
+    "sku": "SKU-048",
+    "product_name": "Vitamin C Effervescent Tabs 10ct",
+    "category": "Health & Beauty",
+    "brand": "VitaShield",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 49,
+    "sku": "SKU-049",
+    "product_name": "Shea Butter Pure Unrefined 200g",
+    "category": "Health & Beauty",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 50,
+    "sku": "SKU-050",
+    "product_name": "Non-Stick Frying Pan 28cm",
+    "category": "Home & Kitchen",
+    "brand": "ChefMate",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 51,
+    "sku": "SKU-051",
+    "product_name": "Stainless Steel Cooking Pot 5L",
+    "category": "Home & Kitchen",
+    "brand": "ChefMate",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 52,
+    "sku": "SKU-052",
+    "product_name": "Wooden Serving Spoon Set 3pc",
+    "category": "Home & Kitchen",
+    "brand": "ChefMate",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 53,
+    "sku": "SKU-053",
+    "product_name": "Plastic Storage Container Set",
+    "category": "Home & Kitchen",
+    "brand": "OrganizeIt",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 54,
+    "sku": "SKU-054",
+    "product_name": "Mosquito Net Double Bed Size",
+    "category": "Home & Kitchen",
+    "brand": "SafeHome",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-CAP-01"
+  },
+  {
+    "product_id": 55,
+    "sku": "SKU-055",
+    "product_name": "Rechargeable Fan Stand 16 Inch",
+    "category": "Home & Kitchen",
+    "brand": "CoolBreeze",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 56,
+    "sku": "SKU-056",
+    "product_name": "Chopping Board Bamboo Large",
+    "category": "Home & Kitchen",
+    "brand": "ChefMate",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 57,
+    "sku": "SKU-057",
+    "product_name": "Broom & Dustpan Set",
+    "category": "Home & Kitchen",
+    "brand": "CleanRight",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 58,
+    "sku": "SKU-058",
+    "product_name": "Laundry Detergent Powder 2kg",
+    "category": "Home & Kitchen",
+    "brand": "CleanRight",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 59,
+    "sku": "SKU-059",
+    "product_name": "Dish Washing Liquid 750ml",
+    "category": "Home & Kitchen",
+    "brand": "CleanRight",
+    "unit_of_measure": "bottle",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 60,
+    "sku": "SKU-060",
+    "product_name": "Running Sneakers — Unisex",
+    "category": "Sports & Outdoors",
+    "brand": "StridePro",
+    "unit_of_measure": "pair",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 61,
+    "sku": "SKU-061",
+    "product_name": "Stainless Steel Water Bottle 1L",
+    "category": "Sports & Outdoors",
+    "brand": "HydroGo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 62,
+    "sku": "SKU-062",
     "product_name": "Yoga Mat Anti-Slip 6mm",
     "category": "Sports & Outdoors",
     "brand": "ZenFlex",
     "unit_of_measure": "each",
     "is_active": false,
-    "product_id": 15
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 63,
+    "sku": "SKU-063",
+    "product_name": "Football Size 5 PU Leather",
+    "category": "Sports & Outdoors",
+    "brand": "StridePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 64,
+    "sku": "SKU-064",
+    "product_name": "Jump Rope Speed Cable",
+    "category": "Sports & Outdoors",
+    "brand": "ZenFlex",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 65,
+    "sku": "SKU-065",
+    "product_name": "Gym Resistance Bands Set 5pc",
+    "category": "Sports & Outdoors",
+    "brand": "ZenFlex",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 66,
+    "sku": "SKU-066",
+    "product_name": "Cycling Helmet Adult Adjustable",
+    "category": "Sports & Outdoors",
+    "brand": "SafeRide",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 67,
+    "sku": "SKU-067",
+    "product_name": "Inflatable Swimming Ring Adult",
+    "category": "Sports & Outdoors",
+    "brand": "HydroGo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-TAK-01"
+  },
+  {
+    "product_id": 68,
+    "sku": "SKU-068",
+    "product_name": "Sports Duffel Bag 40L",
+    "category": "Sports & Outdoors",
+    "brand": "StridePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 69,
+    "sku": "SKU-069",
+    "product_name": "Badminton Racket Set 2pc",
+    "category": "Sports & Outdoors",
+    "brand": "StridePro",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 70,
+    "sku": "SKU-070",
+    "product_name": "A4 Ruled Notebook 200 Pages",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 71,
+    "sku": "SKU-071",
+    "product_name": "Ballpoint Pen Blue 10-Pack",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 72,
+    "sku": "SKU-072",
+    "product_name": "Scientific Calculator",
+    "category": "Books & Stationery",
+    "brand": "CalcMaster",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 73,
+    "sku": "SKU-073",
+    "product_name": "A4 Printer Paper 500 Sheets",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 74,
+    "sku": "SKU-074",
+    "product_name": "Highlighter Marker Set 6 Colors",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 75,
+    "sku": "SKU-075",
+    "product_name": "Stapler & Staples Combo",
+    "category": "Books & Stationery",
+    "brand": "OfficePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 76,
+    "sku": "SKU-076",
+    "product_name": "Whiteboard Markers 4-Pack",
+    "category": "Books & Stationery",
+    "brand": "OfficePro",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 77,
+    "sku": "SKU-077",
+    "product_name": "Spiral Hardcover Sketchbook A3",
+    "category": "Books & Stationery",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 78,
+    "sku": "SKU-078",
+    "product_name": "Children's Building Blocks 50pc",
+    "category": "Toys & Games",
+    "brand": "PlayBuild",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 79,
+    "sku": "SKU-079",
+    "product_name": "Wooden Puzzle 100 Pieces",
+    "category": "Toys & Games",
+    "brand": "PlayBuild",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 80,
+    "sku": "SKU-080",
+    "product_name": "Remote Control Car Kids",
+    "category": "Toys & Games",
+    "brand": "SpeedKidz",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 81,
+    "sku": "SKU-081",
+    "product_name": "Educational Flash Cards Alphabet",
+    "category": "Toys & Games",
+    "brand": "LearnPlay",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 82,
+    "sku": "SKU-082",
+    "product_name": "Soft Plush Toy Elephant",
+    "category": "Toys & Games",
+    "brand": "CuddleCo",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 83,
+    "sku": "SKU-083",
+    "product_name": "Ludo Board Game Family",
+    "category": "Toys & Games",
+    "brand": "PlayBuild",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 84,
+    "sku": "SKU-084",
+    "product_name": "Bubble Blower Wand Set",
+    "category": "Toys & Games",
+    "brand": "SpeedKidz",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-CAP-01"
+  },
+  {
+    "product_id": 85,
+    "sku": "SKU-085",
+    "product_name": "Clay Modelling Kit 12 Colors",
+    "category": "Toys & Games",
+    "brand": "LearnPlay",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 86,
+    "sku": "SKU-086",
+    "product_name": "Rechargeable Electric Shaver",
+    "category": "Personal Care",
+    "brand": "GroomX",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 87,
+    "sku": "SKU-087",
+    "product_name": "Nail Care Kit 7-Piece",
+    "category": "Personal Care",
+    "brand": "GroomX",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 88,
+    "sku": "SKU-088",
+    "product_name": "Body Sponge Loofah Natural",
+    "category": "Personal Care",
+    "brand": "PureGlow",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-CAP-01"
+  },
+  {
+    "product_id": 89,
+    "sku": "SKU-089",
+    "product_name": "Shaving Foam 200ml",
+    "category": "Personal Care",
+    "brand": "GroomX",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 90,
+    "sku": "SKU-090",
+    "product_name": "Wooden Fine-Tooth Comb",
+    "category": "Personal Care",
+    "brand": "ManeGold",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 91,
+    "sku": "SKU-091",
+    "product_name": "Cotton Wool Balls 200-Pack",
+    "category": "Personal Care",
+    "brand": "SafeGuard",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 92,
+    "sku": "SKU-092",
+    "product_name": "Deodorant Roll-On 50ml",
+    "category": "Personal Care",
+    "brand": "GroomX",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 93,
+    "sku": "SKU-093",
+    "product_name": "Lip Balm SPF 15 Pack of 2",
+    "category": "Personal Care",
+    "brand": "PureGlow",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 94,
+    "sku": "SKU-094",
+    "product_name": "Laser Printer Toner Black",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 95,
+    "sku": "SKU-095",
+    "product_name": "Hanging File Folders 25-Pack",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 96,
+    "sku": "SKU-096",
+    "product_name": "Desk Organiser Tray Set",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "set",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 97,
+    "sku": "SKU-097",
+    "product_name": "Transparent Tape 6-Roll Pack",
+    "category": "Office Supplies",
+    "brand": "ScribeWorks",
+    "unit_of_measure": "pack",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
+  },
+  {
+    "product_id": 98,
+    "sku": "SKU-098",
+    "product_name": "Rubber Band Box 100g",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "box",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 99,
+    "sku": "SKU-099",
+    "product_name": "Paper Clips Box 100-Count",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "box",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-ACC-01"
+  },
+  {
+    "product_id": 100,
+    "sku": "SKU-100",
+    "product_name": "Scissors Stainless Steel 8-Inch",
+    "category": "Office Supplies",
+    "brand": "OfficePro",
+    "unit_of_measure": "each",
+    "is_active": true,
+    "fulfillment_warehouse_id": "WH-KUM-01"
   }
 ]
