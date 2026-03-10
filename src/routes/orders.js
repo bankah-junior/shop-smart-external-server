@@ -76,6 +76,18 @@ router.post('/batch', orderController.createOrderBatch);
 
 /**
  * @swagger
+ * /api/orders/all:
+ *   get:
+ *     summary: Retrieve all orders without pagination
+ *     tags: [Orders]
+ *     responses:
+ *       200:
+ *         description: List of all orders
+ */
+router.get('/all', orderController.getAllOrders);
+
+/**
+ * @swagger
  * /api/orders:
  *   get:
  *     summary: List orders with filtering

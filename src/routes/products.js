@@ -101,6 +101,18 @@ router.post('/batch', ctrl.createProductBatch);
 
 /**
  * @swagger
+ * /api/products/all:
+ *   get:
+ *     summary: Retrieve all products without pagination
+ *     tags: [Products]
+ *     responses:
+ *       200:
+ *         description: List of all products
+ */
+router.get('/all', ctrl.getAllProducts);
+
+/**
+ * @swagger
  * /api/products:
  *   get:
  *     summary: List products with filtering

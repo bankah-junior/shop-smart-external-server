@@ -174,10 +174,24 @@ const findOrders = async (req, res, next) => {
   }
 };
 
+/**
+ * GET /api/orders/all
+ * Retrieve all orders without pagination.
+ */
+const getAllOrders = async (req, res, next) => {
+  try {
+    const orders = await orderService.getAllOrders();
+    return res.status(200).json({ success: true, count: orders.length, orders });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   createOrder,
   createOrderBatch,
   listOrders,
+  getAllOrders,
   getOrder,
   updateOrder,
   deleteOrder,

@@ -267,10 +267,18 @@ const findOrders = async (query) => {
   return Order.find(filter).sort({ ingested_at: -1 }).limit(100).lean();
 };
 
+/**
+ * Get all orders without pagination.
+ */
+const getAllOrders = async () => {
+  return Order.find().sort({ ingested_at: -1 }).lean();
+};
+
 module.exports = {
   ingestOrder,
   ingestOrderBatch,
   getOrders,
+  getAllOrders,
   getOrderById,
   updateOrder,
   deleteOrder,

@@ -63,6 +63,18 @@ router.post('/', feedbackValidation, feedbackController.receiveFeedback);
 
 /**
  * @swagger
+ * /api/feedback/all:
+ *   get:
+ *     summary: Retrieve all feedback submissions without pagination
+ *     tags: [Feedback]
+ *     responses:
+ *       200:
+ *         description: List of all feedback
+ */
+router.get('/all', feedbackController.getAllFeedback);
+
+/**
+ * @swagger
  * /api/feedback:
  *   get:
  *     summary: List feedback with filtering

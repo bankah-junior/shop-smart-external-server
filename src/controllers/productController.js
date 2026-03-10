@@ -260,10 +260,24 @@ const validateSkus = async (req, res, next) => {
   }
 };
 
+/**
+ * GET /api/products/all
+ * Retrieve all products without pagination.
+ */
+const getAllProducts = async (req, res, next) => {
+  try {
+    const products = await productService.getAllProducts();
+    return res.status(200).json({ success: true, count: products.length, products });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   createProduct,
   createProductBatch,
   listProducts,
+  getAllProducts,
   getProductBySku,
   getProductById,
   updateProduct,

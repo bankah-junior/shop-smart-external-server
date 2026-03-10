@@ -269,9 +269,17 @@ const findFeedback = async (query) => {
   return FeedbackSubmission.find(filter).sort({ ingested_at: -1 }).limit(100).lean();
 };
 
+/**
+ * Get all feedback submissions without pagination.
+ */
+const getAllFeedback = async () => {
+  return FeedbackSubmission.find().sort({ ingested_at: -1 }).lean();
+};
+
 module.exports = {
   ingestFeedback,
   getFeedback,
+  getAllFeedback,
   getFeedbackById,
   updateFeedback,
   deleteFeedback,

@@ -240,10 +240,18 @@ const findProducts = async (query) => {
   return ProductCatalogue.find(filter).sort({ product_id: 1 }).limit(100).lean();
 };
 
+/**
+ * Get all products without pagination.
+ */
+const getAllProducts = async () => {
+  return ProductCatalogue.find().sort({ product_id: 1 }).lean();
+};
+
 module.exports = {
   createProduct,
   createProductBatch,
   getProducts,
+  getAllProducts,
   getProductBySku,
   getProductById,
   validateSkus,

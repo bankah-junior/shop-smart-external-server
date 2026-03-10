@@ -171,9 +171,23 @@ const findFeedback = async (req, res, next) => {
   }
 };
 
+/**
+ * GET /api/feedback/all
+ * Retrieve all feedback submissions without pagination.
+ */
+const getAllFeedback = async (req, res, next) => {
+  try {
+    const feedbacks = await feedbackService.getAllFeedback();
+    return res.status(200).json({ success: true, count: feedbacks.length, feedbacks });
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   receiveFeedback,
   listFeedback,
+  getAllFeedback,
   getFeedback,
   updateFeedback,
   deleteFeedback,
