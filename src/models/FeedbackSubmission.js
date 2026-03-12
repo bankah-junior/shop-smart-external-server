@@ -129,7 +129,7 @@ const feedbackSchema = new mongoose.Schema(
 );
 
 // Indexes for ETL query patterns
-feedbackSchema.index({ order_id: 1 });
+// feedbackSchema.index({ order_id: 1 });
 feedbackSchema.index({ ingested_at: 1 });
 feedbackSchema.index({ is_orphan: 1 });
 feedbackSchema.index({ submitted_at: 1 });

@@ -32,6 +32,9 @@ app.disable('x-powered-by');
 // ── Swagger Documentation ─────────────────────────────────────────────────────
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
+// ── API Key authentication middleware ─────────────────────────────────────────
+app.set('trust proxy', 1); // trust first proxy for rate limiting behind proxies/load balancers
+
 // ── Rate limiting ─────────────────────────────────────────────────────────────
 const limiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS, 10) || 15 * 60 * 1000,
